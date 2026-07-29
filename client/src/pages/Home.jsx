@@ -5,99 +5,97 @@ import StepCard from "../components/StepCard";
 function Home() {
   return (
     <>
+      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-[85vh] bg-slate-900 flex flex-col justify-center items-center text-center text-white px-5">
-        <h1 className="text-6xl font-bold leading-tight">
-          AI-Powered <span className="text-blue-500">Resume Analyzer</span>
+      <section className="min-h-screen bg-slate-900 flex flex-col justify-center items-center text-center px-6">
+        <h1 className="text-6xl font-bold text-white">
+          AI Powered{" "}
+          <span className="text-blue-500">Resume Analyzer</span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-xl text-gray-300">
-          Analyze your resume using AI, improve your ATS score, match job
-          descriptions, and prepare for interviews with personalized
-          recommendations.
+        <p className="mt-6 text-gray-300 max-w-2xl text-lg">
+          Analyze your resume using AI, improve ATS score, compare with Job
+          Descriptions and prepare for interviews.
         </p>
 
-        <div className="mt-10 flex gap-5">
-          <button className="bg-blue-600 px-8 py-3 rounded-xl hover:bg-blue-700 transition">
+        <div className="mt-8 flex gap-5">
+          <button className="bg-blue-600 px-6 py-3 rounded-lg text-white hover:bg-blue-700">
             Get Started
           </button>
 
-          <button className="border border-white px-8 py-3 rounded-xl hover:bg-white hover:text-black transition">
+          <button className="border border-white px-6 py-3 rounded-lg text-white hover:bg-white hover:text-black">
             Upload Resume
           </button>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section className="bg-slate-950 py-20 px-10">
-        <h2 className="text-4xl text-white font-bold text-center mb-14">
+        <h2 className="text-4xl font-bold text-center text-white mb-14">
           Features
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard
             icon="🤖"
             title="AI Resume Analysis"
-            description="Analyze your resume using Gemini AI and receive personalized feedback."
+            description="Analyze your resume using Gemini AI."
           />
 
           <FeatureCard
             icon="📄"
             title="ATS Score"
-            description="Improve your ATS score with keyword optimization and smart suggestions."
+            description="Improve ATS score with keyword optimization."
           />
 
           <FeatureCard
             icon="🎯"
             title="JD Matching"
-            description="Compare your resume with any job description and identify skill gaps."
+            description="Compare resume with any Job Description."
           />
 
           <FeatureCard
             icon="💬"
             title="Interview Questions"
-            description="Generate personalized interview questions based on your resume."
+            description="Generate personalized interview questions."
           />
         </div>
       </section>
+
       {/* How It Works */}
-<section className="bg-slate-900 py-20 px-10">
+      <section className="bg-slate-900 py-20 px-10">
+        <h2 className="text-4xl text-white font-bold text-center mb-14">
+          How It Works
+        </h2>
 
-  <h2 className="text-4xl text-white font-bold text-center mb-14">
-    How It Works
-  </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StepCard
+            number="1"
+            title="Upload Resume"
+            description="Upload your resume in PDF format securely."
+          />
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StepCard
+            number="2"
+            title="AI Analysis"
+            description="Gemini AI analyzes your resume and extracts key insights."
+          />
 
-    <StepCard
-      number="1"
-      title="Upload Resume"
-      description="Upload your resume in PDF format securely."
-    />
+          <StepCard
+            number="3"
+            title="ATS Score"
+            description="Get ATS score, keyword suggestions and skill gap analysis."
+          />
 
-    <StepCard
-      number="2"
-      title="AI Analysis"
-      description="Gemini AI analyzes your resume and extracts key insights."
-    />
-
-    <StepCard
-      number="3"
-      title="ATS Score"
-      description="Get ATS score, keyword suggestions and skill gap analysis."
-    />
-
-    <StepCard
-      number="4"
-      title="Improve Resume"
-      description="Apply AI suggestions and prepare confidently for interviews."
-    />
-
-  </div>
-
-</section>
+          <StepCard
+            number="4"
+            title="Improve Resume"
+            description="Apply AI suggestions and prepare confidently for interviews."
+          />
+        </div>
+      </section>
     </>
   );
 }
