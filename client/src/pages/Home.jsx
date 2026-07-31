@@ -1,9 +1,32 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FeatureCard from "../components/FeatureCard";
 import StepCard from "../components/StepCard";
 import WhyCard from "../components/WhyCard";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/register");
+    }
+  };
+
+  const handleUploadResume = () => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      navigate("/upload");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -12,8 +35,7 @@ function Home() {
       {/* Hero Section */}
       <section className="min-h-screen bg-slate-900 flex flex-col justify-center items-center text-center px-6">
         <h1 className="text-6xl font-bold text-white leading-tight">
-          AI Powered{" "}
-          <span className="text-blue-500">Resume Analyzer</span>
+          AI Powered <span className="text-blue-500">Resume Analyzer</span>
         </h1>
 
         <p className="mt-6 text-gray-300 max-w-2xl text-xl">
@@ -22,21 +44,24 @@ function Home() {
         </p>
 
         <div className="mt-10 flex gap-5">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl transition">
+          <button
+            onClick={handleGetStarted}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl transition duration-300"
+          >
             Get Started
           </button>
 
-          <button className="border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded-xl transition">
+          <button
+            onClick={handleUploadResume}
+            className="border border-white hover:bg-white hover:text-black text-white px-8 py-3 rounded-xl transition duration-300"
+          >
             Upload Resume
           </button>
         </div>
       </section>
 
       {/* Features */}
-      <section
-        id="features"
-        className="bg-slate-950 py-20 px-10"
-      >
+      <section id="features" className="bg-slate-950 py-20 px-10">
         <h2 className="text-4xl text-white font-bold text-center mb-14">
           Features
         </h2>
@@ -69,10 +94,7 @@ function Home() {
       </section>
 
       {/* How It Works */}
-      <section
-        id="how-it-works"
-        className="bg-slate-900 py-20 px-10"
-      >
+      <section id="how-it-works" className="bg-slate-900 py-20 px-10">
         <h2 className="text-4xl text-white font-bold text-center mb-14">
           How It Works
         </h2>
@@ -105,10 +127,7 @@ function Home() {
       </section>
 
       {/* Why Choose HireMind */}
-      <section
-        id="why-us"
-        className="bg-slate-950 py-20 px-10"
-      >
+      <section id="why-us" className="bg-slate-950 py-20 px-10">
         <h2 className="text-4xl text-white font-bold text-center mb-14">
           Why Choose HireMind AI?
         </h2>

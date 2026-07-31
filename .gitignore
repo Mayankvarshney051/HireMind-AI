@@ -10,8 +10,20 @@ node_modules/
 dist/
 build/
 
+# Uploads
+uploads/
+**/uploads/
+
 # Logs
 *.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
 
 # VS Code
 .vscode/
+
+# JetBrains IDE
+.idea/
